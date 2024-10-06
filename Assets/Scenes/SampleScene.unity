@@ -263,6 +263,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4479146886755101907, guid: e05ee959f2037d14c83913a300b85e18, type: 3}
+      propertyPath: pontoDisparo
+      value: 
+      objectReference: {fileID: 4011646680585890249, guid: 70d25577278210545b6d5f7c866d6958, type: 3}
+    - target: {fileID: 4479146886755101907, guid: e05ee959f2037d14c83913a300b85e18, type: 3}
+      propertyPath: _pontoDisparo
+      value: 
+      objectReference: {fileID: 4011646680585890249, guid: 70d25577278210545b6d5f7c866d6958, type: 3}
+    - target: {fileID: 4479146886755101907, guid: e05ee959f2037d14c83913a300b85e18, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 2944244481666441881, guid: 70d25577278210545b6d5f7c866d6958, type: 3}
+    - target: {fileID: 4479146886755101907, guid: e05ee959f2037d14c83913a300b85e18, type: 3}
+      propertyPath: _projectilePrefab
+      value: 
+      objectReference: {fileID: 2944244481666441881, guid: 70d25577278210545b6d5f7c866d6958, type: 3}
     - target: {fileID: 8903359698285859709, guid: e05ee959f2037d14c83913a300b85e18, type: 3}
       propertyPath: m_Name
       value: Spaceship
