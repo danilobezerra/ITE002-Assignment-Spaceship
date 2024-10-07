@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spaceship : MonoBehaviour
 {
@@ -6,6 +7,13 @@ public class Spaceship : MonoBehaviour
     private Bounds _cameraBounds;
     public Projectile projectilePrefab;
     public float speed = 5f;
+    public int municaoAtualDaNave;
+    public int municaoMaximaDaNave;
+    public float tempoAtualDosDisparos;
+    public float tempoMaximoEntreOsDisparos;
+    public Slider barraDeMunicaoDoJogador;
+    public GameObject laserForte;
+    public Transform localDoDisparoJogador;
 
     void Start()
     {
@@ -13,6 +21,10 @@ public class Spaceship : MonoBehaviour
         var height = Camera.main.orthographicSize * 2f;
         var width = height * Camera.main.aspect;
         _cameraBounds = new Bounds(Vector3.zero, new Vector3(width, height));
+        municaoAtualDaNave = municaoMaximaDaNave;
+        tempoAtualDosDisparos = tempoMaximoEntreOsDisparos;
+        barraDeMunicaoDoJogador.maxValue = municaoMaximaDaNave;
+        barraDeMunicaoDoJogador.value = municaoAtualDaNave;
     }
 
     void LateUpdate()
@@ -29,15 +41,33 @@ public class Spaceship : MonoBehaviour
     void Update()
     {
         ApplyMovement();
-        FireProjectile();
+        if(municaoAtualDaNave > 0)
+        {
+            FireProjectile();
+        }
+        else
+        {
+            RecarregarMunicaoDaNave();
+        }
+        
     }
 
     
 
     void FireProjectile()
     {
-        if (Input.GetButtonDown("Fire1")) {
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        if (Input.GetButtonDown("Fire1")) 
+        {
+            if(municaoAtualDaNave == 1)
+            {
+                Instantiate(laserForte, localDoDisparoJogador.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            }
+            municaoAtualDaNave--;
+            barraDeMunicaoDoJogador.value = municaoAtualDaNave;
         }
     }
 
@@ -47,5 +77,19 @@ public class Spaceship : MonoBehaviour
         var vertical = Input.GetAxis("Vertical");
 
         transform.Translate(Time.deltaTime * speed * new Vector3(horizontal, vertical));
+    }
+
+    private void RecarregarMunicaoDaNave()
+    {
+        if(tempoAtualDosDisparos > 0)
+        {
+            tempoAtualDosDisparos -= Time.deltaTime;
+        }
+        else
+        {
+            municaoAtualDaNave = municaoMaximaDaNave;
+            tempoAtualDosDisparos = tempoMaximoEntreOsDisparos;
+            barraDeMunicaoDoJogador.value = municaoAtualDaNave;
+        }
     }
 }
