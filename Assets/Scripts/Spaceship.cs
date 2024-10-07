@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spaceship : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Spaceship : MonoBehaviour
     public int municaoMaximaDaNave;
     public float tempoAtualDosDisparos;
     public float tempoMaximoEntreOsDisparos;
+    public Slider barraDeMunicaoDoJogador;
+    public GameObject laserForte;
+    public Transform localDoDisparoJogador;
 
     void Start()
     {
@@ -19,6 +23,8 @@ public class Spaceship : MonoBehaviour
         _cameraBounds = new Bounds(Vector3.zero, new Vector3(width, height));
         municaoAtualDaNave = municaoMaximaDaNave;
         tempoAtualDosDisparos = tempoMaximoEntreOsDisparos;
+        barraDeMunicaoDoJogador.maxValue = municaoMaximaDaNave;
+        barraDeMunicaoDoJogador.value = municaoAtualDaNave;
     }
 
     void LateUpdate()
@@ -52,8 +58,16 @@ public class Spaceship : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1")) 
         {
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            if(municaoAtualDaNave == 1)
+            {
+                Instantiate(laserForte, localDoDisparoJogador.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            }
             municaoAtualDaNave--;
+            barraDeMunicaoDoJogador.value = municaoAtualDaNave;
         }
     }
 
@@ -75,6 +89,7 @@ public class Spaceship : MonoBehaviour
         {
             municaoAtualDaNave = municaoMaximaDaNave;
             tempoAtualDosDisparos = tempoMaximoEntreOsDisparos;
+            barraDeMunicaoDoJogador.value = municaoAtualDaNave;
         }
     }
 }

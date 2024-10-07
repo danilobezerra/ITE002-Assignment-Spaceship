@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5819534562154387783}
   m_Layer: 0
   m_Name: Firez
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,9 +167,10 @@ MonoBehaviour:
   laserDoInimigo: {fileID: 6066750740063117561, guid: c96b451e969285647a220105f5f22a8f, type: 3}
   localDoDisparo: {fileID: 4424445437000136215}
   localDoDisparo2: {fileID: 5634675299644520843}
-  velocidadeDoInimigo: 8
+  velocidadeDoInimigo: 7.5
   tempoMaximoEntreOsLasers: 0.5
   tempoAtualDosLasers: 0
+  inimigoAtivado: 0
 --- !u!114 &5819534562154387783
 MonoBehaviour:
   m_ObjectHideFlags: 0

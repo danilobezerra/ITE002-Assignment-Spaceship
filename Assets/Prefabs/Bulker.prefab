@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2322924338708647366}
   m_Layer: 0
   m_Name: Bulker
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,9 +167,10 @@ MonoBehaviour:
   laserDoInimigo: {fileID: 2229081805562125029, guid: f93654b1b7e8e844cabdd3dfaacdb51d, type: 3}
   localDoDisparo: {fileID: 3840381226636075314}
   localDoDisparo2: {fileID: 8413068214122173152}
-  velocidadeDoInimigo: 10
+  velocidadeDoInimigo: 8
   tempoMaximoEntreOsLasers: 1
   tempoAtualDosLasers: 0
+  inimigoAtivado: 0
 --- !u!114 &2322924338708647366
 MonoBehaviour:
   m_ObjectHideFlags: 0
