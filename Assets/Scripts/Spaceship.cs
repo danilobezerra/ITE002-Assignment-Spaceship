@@ -3,16 +3,13 @@ using UnityEngine;
 public class Spaceship : MonoBehaviour {
     private Tiro _tiro;
     private TiroDispersao _tiroDispersao;
-    private Player _player;
 
     void Start() {
         _tiro = GetComponent<Tiro>();
         _tiroDispersao = GetComponent<TiroDispersao>();
-        _player = GetComponent<Player>();
     }
 
     void Update() {
-        ApplyMovement();
         FireProjectile();
     }
 
@@ -24,9 +21,5 @@ public class Spaceship : MonoBehaviour {
         if (Input.GetButtonDown("Fire2")) {
             _tiroDispersao.Disparo();
         }
-    }
-
-    void ApplyMovement() {
-        _player.AplicarMovimentacao();
     }
 }

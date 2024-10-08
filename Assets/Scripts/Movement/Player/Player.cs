@@ -1,12 +1,10 @@
 using UnityEngine;
 
 public class Player : Movement { 
-    public override float speed { get; set; } = 10f;
+    public override float speed { get; set; } = 4f;
 
-    public AudioSource audio;
-
-    void Start() {
-        audio = GetComponent<AudioSource>();   
+    void Update() {
+        AplicarMovimentacao();
     }
 
     public override void AplicarMovimentacao() {
@@ -16,6 +14,5 @@ public class Player : Movement {
         var movement = new Vector3(horizontal, vertical);
 
         transform.Translate(Time.deltaTime * speed * movement);
-        audio.Play();
     }
 }
