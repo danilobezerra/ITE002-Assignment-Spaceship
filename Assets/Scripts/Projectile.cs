@@ -2,15 +2,33 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 25f;
+    public float speed = 5f; 
+    public float damage = 10f;
+    private Vector3 _direction;
 
-    private void Update()
+    void Start()
     {
-        transform.Translate(Time.deltaTime * speed * Vector3.up);
+        
+        Destroy(gameObject, 1f); 
     }
 
-    private void OnBecameInvisible()
+    void Update()
     {
-        Destroy(gameObject);
+       
+        transform.Translate(_direction * speed * Time.deltaTime);
+    }
+
+    public void Setup(Vector3 direction)
+    {
+        _direction = direction;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        
+        if ((col.tag == "Enemy") || (col.tag == "Projectile"))
+        {
+            Destroy(gameObject); 
+        }
     }
 }
