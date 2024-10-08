@@ -4,7 +4,7 @@ public class Spaceship : MonoBehaviour {
     private Tiro _tiro;
     private TiroDispersao _tiroDispersao;
     private Player _player;
-  
+
     void Start() {
         _tiro = GetComponent<Tiro>();
         _tiroDispersao = GetComponent<TiroDispersao>();
