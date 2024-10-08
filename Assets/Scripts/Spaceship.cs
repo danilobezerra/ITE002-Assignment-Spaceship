@@ -24,10 +24,4 @@ public class Spaceship : MonoBehaviour
         newPositon.y = Mathf.Clamp(newPositon.y, _cameraBounds.min.y + spriteHeight, _cameraBounds.max.y - spriteHeight);
         transform.position = newPositon;
     }
-
-    void Update()
-    {
-        //ApplyMovement();
-        //FireProjectile();
-    }
 }
