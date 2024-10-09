@@ -6,6 +6,7 @@ public class Spaceship : MonoBehaviour
     private Bounds _cameraBounds;
     public Projectile projectilePrefab;
     public float speed = 5f;
+    private Weapon weapon;
 
     void Start()
     {
@@ -13,6 +14,7 @@ public class Spaceship : MonoBehaviour
         var height = Camera.main.orthographicSize * 2f;
         var width = height * Camera.main.aspect;
         _cameraBounds = new Bounds(Vector3.zero, new Vector3(width, height));
+        weapon = GetComponent<Weapon>();
     }
 
     void LateUpdate()
@@ -29,7 +31,7 @@ public class Spaceship : MonoBehaviour
     void Update()
     {
         ApplyMovement();
-        FireProjectile();
+        // FireProjectile();
     }
 
     
