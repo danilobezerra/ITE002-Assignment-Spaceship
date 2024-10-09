@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -12,5 +13,17 @@ public class Projectile : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log("Trigger teste");
+        if (collision.CompareTag("Enemy"))
+        {
+            //Debug.Log("Tag teste");
+            collision.GetComponent<EnemyMovement>().Explode();
+            Destroy(gameObject); // Destrói o laser após colidir
+
+        }
     }
 }
