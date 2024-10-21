@@ -6,11 +6,11 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Time.deltaTime * speed * Vector3.up);
+       transform.Translate(Time.deltaTime * speed * Vector3.up);
     }
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+       Destroy(gameObject);
     }
 }
