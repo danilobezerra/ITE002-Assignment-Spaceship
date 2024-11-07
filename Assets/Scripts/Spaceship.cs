@@ -4,7 +4,6 @@ public class Spaceship : MonoBehaviour
 {
     private SpriteRenderer _renderer;
     private Bounds _cameraBounds;
-    public float speed = 5f;
 
     void Start()
     {
