@@ -114,4 +114,3 @@ public class Gun : MonoBehaviour
     }
 
 }
->>>>>>> Stashed changes
