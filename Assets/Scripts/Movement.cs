@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     private float noMovTimer = 0f;
     public float noMovTime = 2f;
 
-    //Vari√°veis que definem os comportamentos que teram as entidades.
+    //Vari·veis que definem os comportamentos que teram as entidades.
     public bool startsStill;
     public bool entityTurns;
     public bool entityWaves;
@@ -28,12 +28,12 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        //Est√° definindo se a entidade √© um jogador ou outra entidade
+        //Est· definindo se a entidade È um jogador ou outra entidade
         if (!enemyEntity)
         { PlayerMovement(); }
         else
         {
-            //Esse if define se a entidade vai come√ßar parada
+            //Esse if define se a entidade vai comeÁar parada
             if (!startsStill)
             {
                 StraightMovement();
@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //M√©todo que pega o input do jogador e transforma em movimento
+    //MÈtodo que pega o input do jogador e transforma em movimento
     void PlayerMovement()
     {
         var horizontal = Input.GetAxis("Horizontal");

@@ -9,10 +9,10 @@ public class Gun : MonoBehaviour
     public int municaoMax = 10;
     public int damage = 1;
 
-    //VariÃ¡vel para mudar entre os tipos de disparo
+    //Variável para mudar entre os tipos de disparo
     public int tiposTiro = 0;
 
-    //VariÃ¡veis cronÃ´metro
+    //Variáveis cronômetro
     private float autoTimer = 0f;
     public float reloadSetTime;
     private float reloadTimer = 0f;
@@ -32,7 +32,7 @@ public class Gun : MonoBehaviour
 
     void FireProjectile()
     {
-        //Decide que tipo de tiro serÃ¡ feito
+        //Decide que tipo de tiro será feito
         switch(tiposTiro)
         {
             case 0: SingleFire(); break;
@@ -43,13 +43,13 @@ public class Gun : MonoBehaviour
 
     void ReloadGun()
     {
-        //Esse if Ã© para comeÃ§ar o recarregamento a partir do Input do jogador
+        //Esse if é para começar o recarregamento a partir do Input do jogador
         if (Input.GetButtonDown("Fire2") && !reloadTimerAtivo)
         {
             reloadTimerAtivo = true;
         }
 
-        //Esse if Ã© para dar tempo antes de recarregar a arma
+        //Esse if é para dar tempo antes de recarregar a arma
         if (reloadTimerAtivo)
         {
             reloadTimer -= Time.deltaTime;
@@ -63,10 +63,10 @@ public class Gun : MonoBehaviour
         }
     }
 
-    //RegiÃ£o de comportamento dos tipos de disparo
+    //Região de comportamento dos tipos de disparo
     #region Tipos de Tiro
 
-    //MÃ©todo para tiro de disparo Ãºnico
+    //Método para tiro de disparo único
     void SingleFire()
     {
         if (Input.GetButtonDown("Fire1") /*&& municao > 0 && !reloadTimerAtivo*/)
@@ -77,7 +77,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    //MÃ©todo para tiro de disparo automÃ¡tico
+    //Método para tiro de disparo automático
     void AutoFire()
     {
         autoTimer -= Time.deltaTime;
@@ -89,7 +89,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    //MÃ©todo para tiro de disparo de dispersÃ£o
+    //Método para tiro de disparo de dispersão
     void SpreadFire()
     {
         if (Input.GetButtonDown("Fire1") && municao > 2 && !reloadTimerAtivo)
