@@ -7,7 +7,6 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        damage = GameObject.FindGameObjectWithTag("Arma").GetComponent<Gun>().damage;
     }
     private void Update()
     {
