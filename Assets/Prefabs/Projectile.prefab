@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4011646680585890249}
   - component: {fileID: 599221846568031137}
-  - component: {fileID: -6332437288468472740}
+  - component: {fileID: 7410521783015353851}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.596925, y: 0.596925, z: 2.3877}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8301887, g: 0.12061229, b: 0.12061229, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6332437288468472740
+--- !u!114 &7410521783015353851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2944244481666441881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfb92ecd53d801c4a9f4d42a12d189a7, type: 3}
+  m_Script: {fileID: 11500000, guid: d7122d3570396684b9d2e3fad80d404f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  rotationSpeed: 20
+  dirChangeTime: 2
+  noMovTime: 2
+  startsStill: 0
+  entityTurns: 0
+  entityWaves: 0
+  enemyEntity: 1
