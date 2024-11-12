@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 655597184808471818}
   - component: {fileID: 705146200743724088}
   - component: {fileID: 8468617550495402849}
+  - component: {fileID: -3106218610129550813}
   m_Layer: 0
   m_Name: AguaRosa
   m_TagString: Inimigo
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -230873116, guid: 4070bb7a39ba31e4f86dd1c2a840c49a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7122d3570396684b9d2e3fad80d404f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.5
   rotationSpeed: 10
   dirChangeTime: 1.2
   noMovTime: 2
@@ -206,5 +207,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3a77b847f6b7e4989bb593a123b93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
+  valorPontos: 3
   efeitoMorte: {fileID: 359932394606043220, guid: 35bd4b567af35de4291d90a2061e3883, type: 3}
+  waveManager: {fileID: 0}
+--- !u!114 &-3106218610129550813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495559857462022196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eff120dc014e9643ac514797b3c28a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

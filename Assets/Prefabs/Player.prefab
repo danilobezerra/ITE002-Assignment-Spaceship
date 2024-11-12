@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 216719355557326103}
   - component: {fileID: 6690052782796340351}
   m_Layer: 0
-  m_Name: Harpoon_3
-  m_TagString: Untagged
+  m_Name: Arma
+  m_TagString: Arma
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,7 +218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3a77b847f6b7e4989bb593a123b93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 1
   health: 3
+  valorPontos: 0
   efeitoMorte: {fileID: 359932394606043220, guid: 35bd4b567af35de4291d90a2061e3883, type: 3}
 --- !u!114 &359795832423942359
 MonoBehaviour:
@@ -283,7 +285,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00900507, y: 0.034894302}
@@ -299,12 +301,12 @@ Rigidbody2D:
   m_GameObject: {fileID: 8903359698285859709}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
