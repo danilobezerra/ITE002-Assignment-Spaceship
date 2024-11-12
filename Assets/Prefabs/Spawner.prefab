@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 1706069991154373160, guid: 4c491440e62d3814ca150727081bc6b6, type: 3}
   tBeforeSpawn:
   - 1
-  enemyType: 00000000
+  entityTypes: 00000000
   speed:
   - 0.5
   rotationSpeed:

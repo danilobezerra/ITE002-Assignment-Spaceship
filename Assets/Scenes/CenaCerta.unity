@@ -1183,8 +1183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2327090e92c85e44d8f0d3bbb250576e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pausa: {fileID: 684724751}
-  GameOver: {fileID: 0}
 --- !u!224 &453562047
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1748,9 +1746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0457a2882d1439449906bed3a99e54e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
-  _buttonStart: {fileID: 0}
-  _buttonQuit: {fileID: 419261970}
 --- !u!224 &684724755
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2428,6 +2423,10 @@ PrefabInstance:
       propertyPath: tiposTiro
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6690052782796340351, guid: e05ee959f2037d14c83913a300b85e18, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4315052073734017680, guid: 7680b38300d637945b74a70fadc66035, type: 3}
     - target: {fileID: 8903359698285859709, guid: e05ee959f2037d14c83913a300b85e18, type: 3}
       propertyPath: m_Name
       value: Player

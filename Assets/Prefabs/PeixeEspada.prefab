@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4710118325094438590}
   - component: {fileID: 4449645716288971038}
   - component: {fileID: 815748271628075849}
-  - component: {fileID: 9223045858609600732}
   m_Layer: 0
   m_Name: PeixeEspada
   m_TagString: Inimigo
@@ -120,13 +119,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6152893174738360016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3a77b847f6b7e4989bb593a123b93e, type: 3}
+  m_Script: {fileID: 11500000, guid: c37d16c5434ddae45b337c2ba06dcac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  valorPontos: 5
-  efeitoMorte: {fileID: 359932394606043220, guid: 35bd4b567af35de4291d90a2061e3883, type: 3}
-  waveManager: {fileID: 0}
+  speed: 0.5
+  rotationSpeed: 10
+  dirChangeTime: 1.2
+  noMovTime: 2
+  startsStill: 0
+  entityTurns: 0
+  entityWaves: 0
+  enemyEntity: 1
+  followsPlayer: 0
+  posPlayer: {fileID: 0}
 --- !u!70 &4710118325094438590
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -198,28 +203,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6152893174738360016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7122d3570396684b9d2e3fad80d404f, type: 3}
+  m_Script: {fileID: 11500000, guid: c3e7b239340b7e643976a4cf11a40e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  rotationSpeed: 10
-  dirChangeTime: 1.2
-  noMovTime: 2
-  startsStill: 0
-  entityTurns: 0
-  entityWaves: 0
-  enemyEntity: 1
-  followsPlayer: 0
-  posPlayer: {fileID: 0}
---- !u!114 &9223045858609600732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6152893174738360016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eff120dc014e9643ac514797b3c28a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  health: 6
+  valorPontos: 3
+  efeitoMorte: {fileID: 359932394606043220, guid: 35bd4b567af35de4291d90a2061e3883, type: 3}
+  waveManager: {fileID: 0}
+  isPlayer: 0

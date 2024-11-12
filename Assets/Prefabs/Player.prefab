@@ -94,15 +94,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1983669373428137803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b173a9930afd564fbaa37e813b20655, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad7d923bfd8e9b498c55401b27723a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4315052073734017680, guid: 7680b38300d637945b74a70fadc66035, type: 3}
   municao: 10
   municaoMax: 10
   damage: 1
-  tiposTiro: 0
-  reloadSetTime: 2
+  tiposTiro: 1
+  reloadSetTime: 0
 --- !u!1 &8903359698285859709
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,47 +203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8903359698285859709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e45f508ee75d2c42bd6001206ca5637, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6499273183813591384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8903359698285859709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3a77b847f6b7e4989bb593a123b93e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayer: 1
-  health: 3
-  valorPontos: 0
-  efeitoMorte: {fileID: 359932394606043220, guid: 35bd4b567af35de4291d90a2061e3883, type: 3}
---- !u!114 &359795832423942359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8903359698285859709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4004ceaee92234d459f549c5a06eda92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7202444780712791223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8903359698285859709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7122d3570396684b9d2e3fad80d404f, type: 3}
+  m_Script: {fileID: 11500000, guid: c37d16c5434ddae45b337c2ba06dcac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
@@ -256,6 +216,47 @@ MonoBehaviour:
   enemyEntity: 0
   followsPlayer: 0
   posPlayer: {fileID: 0}
+--- !u!114 &6499273183813591384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903359698285859709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51c4529cde540748bfad0ad0ca9c3a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &359795832423942359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903359698285859709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e7b239340b7e643976a4cf11a40e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  valorPontos: 0
+  efeitoMorte: {fileID: 359932394606043220, guid: 35bd4b567af35de4291d90a2061e3883, type: 3}
+  waveManager: {fileID: 0}
+  isPlayer: 1
+--- !u!114 &7202444780712791223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903359698285859709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709efcabdc269214b8a81b2400018358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &7539707069491838967
 CircleCollider2D:
   m_ObjectHideFlags: 0
