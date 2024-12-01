@@ -1,10 +1,33 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    private int enemiesKilled = 0;
+
+    public TextMeshProUGUI killCountText; 
+
+    void Start()
+    {
+        UpdateKillCountUI();
+    }
+
+    public void IncrementKillCount()
+    {
+        enemiesKilled++;
+        UpdateKillCountUI();
+    }
+
+    private void UpdateKillCountUI()
+    {
+        if (killCountText != null)
+        {
+            killCountText.text = $"Inimigos Mortos: {enemiesKilled}";
+        }
+    }
+
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
 }

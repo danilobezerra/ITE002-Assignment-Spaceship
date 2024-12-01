@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 3;
+    public int maxHealth = 5;
     private int currentHealth;
 
     public Slider healthBarSlider;
 
     private EnemySpawner spawner;
+    private GameManager gameManager;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
         healthBarSlider.value = currentHealth;
 
         spawner = FindObjectOfType<EnemySpawner>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void TakeDamage(int amount)
@@ -34,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         spawner.SpawnEnemies(2);
+        gameManager.IncrementKillCount();
 
         Destroy(gameObject);
     }
