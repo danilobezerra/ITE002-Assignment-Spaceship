@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3376539721835403284}
   - component: {fileID: 4810163862326608338}
-  - component: {fileID: 1554605397421013137}
+  - component: {fileID: 2427116813342612211}
   m_Layer: 0
-  m_Name: Spaceship
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: -2135585597343286014, guid: eed45a33cd08446c8b88325cf82fc52f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1554605397421013137
+--- !u!114 &2427116813342612211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8903359698285859709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e45f508ee75d2c42bd6001206ca5637, type: 3}
+  m_Script: {fileID: 11500000, guid: 7399d4aa3f24555438dc90ce8fdf50da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 3376539721835403284, guid: e05ee959f2037d14c83913a300b85e18, type: 3}
