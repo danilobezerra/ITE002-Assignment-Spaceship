@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
@@ -12,12 +13,17 @@ public class Weapon : MonoBehaviour
     private float nextFireTime = 0f;
 
     public AudioClip shootSound;
+    public AudioClip reloadSound;
     private AudioSource audioSource;
+    public TextMeshProUGUI ammoText;
+    public TextMeshProUGUI reloadText;
 
     void Start()
     {
         currentAmmo = ammoCapacity;
         audioSource = GetComponent<AudioSource>();
+        UpdateAmmoText();
+        reloadText.gameObject.SetActive(false);
     }
 
     public void HandleShooting()
@@ -43,14 +49,23 @@ public class Weapon : MonoBehaviour
         Instantiate(projectilePrefab, transform.position, transform.rotation);
         currentAmmo--;
         audioSource.PlayOneShot(shootSound);
+        UpdateAmmoText();
     }
 
     IEnumerator Reload()
     {
         isReloading = true;
-        // todo adicioanr feedback de recarregamento
+        reloadText.gameObject.SetActive(true);
+        audioSource.PlayOneShot(reloadSound);
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = ammoCapacity;
         isReloading = false;
+        reloadText.gameObject.SetActive(false);
+        UpdateAmmoText();
+    }
+
+    void UpdateAmmoText()
+    {
+        ammoText.text = $"Munição: {currentAmmo.ToString("D2")} / {ammoCapacity}";
     }
 }
