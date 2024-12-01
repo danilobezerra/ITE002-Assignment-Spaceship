@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 5;
+    public int maxHealth = 3;
     private int currentHealth;
 
     public Slider healthBarSlider;
@@ -13,7 +13,9 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        UpdateHealthBar();
+
+        healthBarSlider.maxValue = maxHealth;
+        healthBarSlider.value = currentHealth;
 
         spawner = FindObjectOfType<EnemySpawner>();
     }
@@ -31,19 +33,13 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        if (spawner != null)
-        {
-            spawner.SpawnEnemy();
-        }
+        spawner.SpawnEnemies(2);
 
         Destroy(gameObject);
     }
 
     void UpdateHealthBar()
     {
-        if (healthBarSlider != null)
-        {
-            healthBarSlider.value = currentHealth;
-        }
+        healthBarSlider.value = currentHealth;
     }
 }

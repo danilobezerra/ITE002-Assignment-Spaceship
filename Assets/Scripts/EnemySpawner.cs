@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public float yMax = 4f;
 
     public float minDistanceFromPlayer = 5f;
+    public int maxEnemies = 20;
 
     private Transform playerTransform;
 
@@ -31,9 +32,21 @@ public class EnemySpawner : MonoBehaviour
                 Random.Range(yMin, yMax),
                 0f
             );
-
-        } while (Vector3.Distance(spawnPosition, playerTransform.position) < minDistanceFromPlayer);
+        } while (playerTransform != null && Vector3.Distance(spawnPosition, playerTransform.position) < minDistanceFromPlayer);
 
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+    }
+
+    public void SpawnEnemies(int count)
+    {
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length >= maxEnemies)
+        {
+            return;
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            SpawnEnemy();
+        }
     }
 }
