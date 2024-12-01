@@ -48,7 +48,7 @@ public class Weapon : MonoBehaviour
     {
         Instantiate(projectilePrefab, transform.position, transform.rotation);
         currentAmmo--;
-        audioSource.PlayOneShot(shootSound);
+       //todo uncomment audioSource.PlayOneShot(shootSound);
         UpdateAmmoText();
     }
 
@@ -56,7 +56,7 @@ public class Weapon : MonoBehaviour
     {
         isReloading = true;
         reloadText.gameObject.SetActive(true);
-        audioSource.PlayOneShot(reloadSound);
+        //todo uncomment audioSource.PlayOneShot(reloadSound);
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = ammoCapacity;
         isReloading = false;
