@@ -17,6 +17,11 @@ public class Weapon : MonoBehaviour
     private AudioSource audioSource;
     public TextMeshProUGUI ammoText;
     public TextMeshProUGUI reloadText;
+    public GameObject muzzleFlashPrefab;
+    public SpriteRenderer weaponRenderer;
+    public Color normalColor = Color.white;
+    public Color reloadColor = Color.yellow;
+
 
     void Start()
     {
@@ -48,20 +53,28 @@ public class Weapon : MonoBehaviour
     {
         Instantiate(projectilePrefab, transform.position, transform.rotation);
         currentAmmo--;
-       //todo uncomment audioSource.PlayOneShot(shootSound);
+        audioSource.PlayOneShot(shootSound);
         UpdateAmmoText();
+
+        GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, transform.position, transform.rotation);
+        Destroy(muzzleFlash, 0.5f);
     }
 
     IEnumerator Reload()
     {
         isReloading = true;
         reloadText.gameObject.SetActive(true);
-        //todo uncomment audioSource.PlayOneShot(reloadSound);
+        audioSource.PlayOneShot(reloadSound);
+
+        weaponRenderer.color = reloadColor;
+
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = ammoCapacity;
         isReloading = false;
         reloadText.gameObject.SetActive(false);
         UpdateAmmoText();
+
+        weaponRenderer.color = normalColor;
     }
 
     void UpdateAmmoText()
