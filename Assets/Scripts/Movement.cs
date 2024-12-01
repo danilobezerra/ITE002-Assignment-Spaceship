@@ -7,15 +7,17 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        HandleMovement();
+        if (CompareTag("Player"))
+        {
+            HandleMovement();
+        }
     }
 
     public void HandleMovement()
     {
-        // Para o jogador
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        movementDirection = new Vector3(horizontal, vertical, 0f);
+        movementDirection = new Vector3(horizontal, vertical, 0f).normalized;
 
         Move();
     }
@@ -25,9 +27,8 @@ public class Movement : MonoBehaviour
         transform.Translate(speed * Time.deltaTime * movementDirection);
     }
 
-    // Função para inimigos controlados pela IA
     public void SetMovementDirection(Vector3 direction)
     {
-        movementDirection = direction;
+        movementDirection = direction.normalized;
     }
 }
