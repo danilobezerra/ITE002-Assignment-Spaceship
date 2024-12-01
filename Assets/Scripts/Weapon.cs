@@ -16,8 +16,8 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         currentAmmo = ammoCapacity;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void HandleShooting()
@@ -40,7 +40,7 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        Instantiate(projectilePrefab, transform.position, transform.rotation);
         currentAmmo--;
         audioSource.PlayOneShot(shootSound);
     }
@@ -48,7 +48,7 @@ public class Weapon : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
-        // Adicione feedback de recarregamento aqui
+        // todo adicioanr feedback de recarregamento
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = ammoCapacity;
         isReloading = false;

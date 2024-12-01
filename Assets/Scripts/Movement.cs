@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
 
     public void Move()
     {
-        transform.Translate(speed * Time.deltaTime * movementDirection);
+        transform.Translate(speed * Time.deltaTime * movementDirection, Space.World);
     }
 
     public void SetMovementDirection(Vector3 direction)

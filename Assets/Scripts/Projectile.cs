@@ -3,10 +3,16 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed = 25f;
+    private Vector3 direction;
 
-    private void Update()
+    void Start()
     {
-        transform.Translate(Time.deltaTime * speed * Vector3.up);
+        direction = transform.up;
+    }
+
+    void Update()
+    {
+        transform.Translate(speed * Time.deltaTime * direction, Space.World);
     }
 
     private void OnBecameInvisible()
