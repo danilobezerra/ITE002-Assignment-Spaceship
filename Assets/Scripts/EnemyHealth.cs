@@ -48,9 +48,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        spawner.SpawnEnemies(2);
         gameManager.IncrementKillCount();
-
         Destroy(gameObject);
     }
 

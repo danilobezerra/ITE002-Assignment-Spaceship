@@ -15,8 +15,8 @@ public class Movement : MonoBehaviour
 
     public void HandleMovement()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        var horizontal = Input.GetAxis("Horizontal");
+        var vertical = Input.GetAxis("Vertical");
         movementDirection = new Vector3(horizontal, vertical, 0f).normalized;
 
         Move();

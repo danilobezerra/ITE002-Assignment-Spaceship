@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     {
         movement = GetComponent<Movement>();
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        var player = GameObject.FindGameObjectWithTag("Player");
 
         playerTransform = player.transform;
 
@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (playerTransform != null)
         {
-            Vector3 direction = (playerTransform.position - transform.position).normalized;
+            var direction = (playerTransform.position - transform.position).normalized;
 
             movement.SetMovementDirection(direction);
             movement.Move();

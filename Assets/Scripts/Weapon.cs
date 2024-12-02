@@ -22,7 +22,6 @@ public class Weapon : MonoBehaviour
     public Color normalColor = Color.white;
     public Color reloadColor = Color.yellow;
 
-
     void Start()
     {
         currentAmmo = ammoCapacity;
@@ -31,12 +30,26 @@ public class Weapon : MonoBehaviour
         reloadText.gameObject.SetActive(false);
     }
 
+    void Update()
+    {
+        HandleShooting();
+    }
+
     public void HandleShooting()
     {
         if (isReloading)
             return;
 
-        if (currentAmmo <= 0)
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (currentAmmo < ammoCapacity)
+            {
+                StartCoroutine(Reload());
+                return;
+            }
+        }
+
+        if (currentAmmo <= 0 && !isReloading)
         {
             StartCoroutine(Reload());
             return;
@@ -56,7 +69,7 @@ public class Weapon : MonoBehaviour
         audioSource.PlayOneShot(shootSound);
         UpdateAmmoText();
 
-        GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, transform.position, transform.rotation);
+        var muzzleFlash = Instantiate(muzzleFlashPrefab, transform.position, transform.rotation);
         Destroy(muzzleFlash, 0.5f);
     }
 
@@ -69,9 +82,11 @@ public class Weapon : MonoBehaviour
         weaponRenderer.color = reloadColor;
 
         yield return new WaitForSeconds(reloadTime);
+
         currentAmmo = ammoCapacity;
         isReloading = false;
         reloadText.gameObject.SetActive(false);
+
         UpdateAmmoText();
 
         weaponRenderer.color = normalColor;
