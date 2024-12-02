@@ -589,3 +589,4 @@ MonoBehaviour:
   maxHealth: 5
   healthBarSlider: {fileID: 4506383900955193368}
   enemyRenderer: {fileID: 7451731664724505736}
+  explosionPrefab: {fileID: 5462384777096099494, guid: 7099cf27fcc56484fad77a4452dc8bd0, type: 3}

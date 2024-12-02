@@ -12,6 +12,8 @@ public class EnemyHealth : MonoBehaviour
     public Slider healthBarSlider;
     public SpriteRenderer enemyRenderer;
 
+    public GameObject explosionPrefab;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -38,16 +40,14 @@ public class EnemyHealth : MonoBehaviour
 
     IEnumerator FlashRed()
     {
-        if (enemyRenderer != null)
-        {
-            enemyRenderer.color = Color.red;
-            yield return new WaitForSeconds(0.1f);
-            enemyRenderer.color = Color.white;
-        }
+        enemyRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        enemyRenderer.color = Color.white;
     }
 
     void Die()
     {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         spawner.SpawnEnemies(2);
         gameManager.IncrementKillCount();
 
