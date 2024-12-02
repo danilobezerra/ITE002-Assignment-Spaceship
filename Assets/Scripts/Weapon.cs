@@ -66,7 +66,7 @@ public class Weapon : MonoBehaviour
     {
         Instantiate(projectilePrefab, transform.position, transform.rotation);
         currentAmmo--;
-        audioSource.PlayOneShot(shootSound);
+        audioSource.PlayOneShot(shootSound, 0.2f);
         UpdateAmmoText();
 
         var muzzleFlash = Instantiate(muzzleFlashPrefab, transform.position, transform.rotation);
